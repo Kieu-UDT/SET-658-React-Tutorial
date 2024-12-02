@@ -1,16 +1,16 @@
-import { useState } from "react";
+import CounterA from "./components/counterA/counterA";
+import store from "./store";
 
-export default function MyApp() {
-    const [count, setCount] = useState(0);
+import { Provider } from "react-redux";
 
-    function handleClick() {
-        setCount(count + 1);
-    }
-
+const App = () => {
     return (
         <div>
-            
-
+            <Provider store={store}>
+                <CounterA />
+            </Provider>
         </div>
     );
 }
+
+export default App;

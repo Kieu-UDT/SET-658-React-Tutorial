@@ -1,12 +1,10 @@
-// MyApp
-import { createRoot } from "react-dom/client";
-import  MyApp  from "./App.js";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-
-// clear the existing HTML content
-document.body.innerHTML = '<div id="app"></div>';
-
-//Render your React component instead
-const root = createRoot(document.getElementById("app"));
-root.render( <MyApp/>);
-
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+    throw new Error('Root element not found. Make sure your HTML has a <div id="root"></div>');
+}
+const root = ReactDOM.createRoot(rootElement);
+root.render(<App />);
